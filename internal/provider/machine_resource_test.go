@@ -2,10 +2,11 @@ package provider
 
 import (
 	"fmt"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"os"
 	"testing"
+
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
 func TestAccFlyMachineBase(t *testing.T) {
@@ -32,9 +33,7 @@ func testFlyMachineResourceConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
+  
 }
 
 resource "fly_machine" "testMachine" {
@@ -70,9 +69,6 @@ func testFlyMachineResourceUpdateConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -123,9 +119,6 @@ func testFlyMachineResourceNoServicesConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -160,9 +153,6 @@ func testFlyMachineResourceEmptyServicesConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -203,9 +193,6 @@ func testFlyMachineResourceInitOptionsConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -245,9 +232,6 @@ func testFlyMachineResourceChangeImageConfig(name string) string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -299,9 +283,6 @@ func testFlyMachineResourceEmptyNameConfig() string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
@@ -336,9 +317,6 @@ func testFlyMachineResourceEmptyNameUpdateConfig() string {
 
 	return fmt.Sprintf(`
 provider "fly" {
-  useinternaltunnel    = true
-  internaltunnelorg    = "fly-terraform-ci"
-  internaltunnelregion = "ewr"
 }
 
 resource "fly_machine" "testMachine" {
